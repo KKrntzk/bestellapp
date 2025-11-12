@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-header {
+  height: 64px;
+  background-color: rgb(221, 155, 69);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-img {
+  height: 50px;
+}
+
+.header-img {
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.shop-reviews {
+  color: rgb(221, 155, 69);
+}
+
+.header-nav-options {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.arrow-icon {
+  height: 40px;
+  width: 40px;
+}
+
+.option-section-img {
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+}

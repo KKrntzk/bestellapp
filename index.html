@@ -4,44 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/img/favicon/favicon-32x32.png"
+      type="image/x-icon"
+    />
     <script src="./scripts/db.js"></script>
     <script src="./script.js"></script>
     <title>Bestellapp</title>
   </head>
   <body>
     <header class="main-header">
-      <img src="./assets/img/logo/Logo.png" alt="Logo" />
+      <img class="logo-img" src="./assets/img/logo/Logo.png" alt="Logo" />
       <nav></nav>
     </header>
 
     <main>
       <section>
         <img
+          class="header-img"
           src="./assets/img/dishimg/pizza-3000274_1920.jpg"
           alt="Picture of a pizza"
         />
       </section>
 
-      <section>
-        <p>Mangia Bene</p>
-        <p>Bewertungen (4,8 von 5 Sternen)</p>
+      <section id="shop-details">
+        <h1 class="shop-name">Mangia Bene</h1>
+        <p class="shop-reviews">Bewertungen (4,8 von 5 Sternen)</p>
       </section>
 
       <section>
-        <header>
+        <header class="header-nav-options">
           <img
-            src="./assets/img/icons/right-arrow.png"
+            class="arrow-icon"
+            src="./assets/img/icons/arrow.png"
             alt="Arrow Icon to the right"
           />
-          <button><p>Pizza</p></button>
-          <button><p>Pasta</p></button>
-          <button><p>Desert</p></button>
+          <a href="#">Pizza</a>
+          <a href="#">Pasta</a>
+          <a href="#">Desert</a>
         </header>
       </section>
 
       <section>
         <section>
           <img
+            class="option-section-img"
             src="./assets/img/dishimg/refreshment-3227297_1920.jpg"
             alt="Picture of a pizza"
           />
@@ -56,30 +64,13 @@
             <p id="pizzaVariationPrice">price</p>
             <button id="addBtn" class="add-Btn">+</button>
           </section>
-          <section>
-            <p></p>
-            <p></p>
-            <p></p>
-            <button>X</button>
-          </section>
-          <section>
-            <p></p>
-            <p></p>
-            <p></p>
-            <button>X</button>
-          </section>
-          <section>
-            <p></p>
-            <p></p>
-            <p></p>
-            <button>X</button>
-          </section>
         </section>
       </section>
 
       <section>
         <section>
           <img
+            class="option-section-img"
             src="./assets/img/dishimg/fresh-pasta-5154229_1920.jpg"
             alt="picture of noodles"
           />
@@ -116,6 +107,7 @@
       <section>
         <section>
           <img
+            class="option-section-img"
             src="./assets/img/dishimg/tiramisu-7030032_1920.jpg"
             alt="picture of deserts"
           />
