@@ -3,32 +3,22 @@
 //function to render in each dish info
 
 function renderEachElement() {
-  let pizzaTargetRef = document.getElementById("pizzaVariationTarget");
-  let pastaTargetRef = document.getElementById("pastaVariationTarget");
-  let desertTargetRef = document.getElementById("desertVariationTarget");
-  for (let index = 0; index < options.length; index++) {
-    pizzaTargetRef.innerHTML += renderEachPizza(index);
-    pastaTargetRef.innerHTML += renderEachPasta(index);
-    desertTargetRef.innerHTML += renderEachDesert(index);
-  }
+  renderEachPizza();
+  renderEachPasta();
+  renderEachDesert();
 }
 
 //#region pizza functions
 
-function renderEachPizza(index) {
+function renderEachPizza() {
   const pizzaVariationTargetRef = document.getElementById(
     "pizzaVariationTarget"
   );
   pizzaVariationTargetRef.innerHTML = "";
-  for (
-    let pizzaIndex = 0;
-    pizzaIndex < options[index].pizza.length;
-    pizzaIndex++
-  ) {
-    const elementPizzaName = options[index].pizza[pizzaIndex].name;
-    const elementPizzaPrice = options[index].pizza[pizzaIndex].price;
-    const elementPizzaDescription =
-      options[index].pizza[pizzaIndex].description;
+  for (let pizzaIndex = 0; pizzaIndex < options[0].pizza.length; pizzaIndex++) {
+    const elementPizzaName = options[0].pizza[pizzaIndex].name;
+    const elementPizzaPrice = options[0].pizza[pizzaIndex].price;
+    const elementPizzaDescription = options[0].pizza[pizzaIndex].description;
     pizzaVariationTargetRef.innerHTML += renderSinglePizza(
       pizzaIndex,
       elementPizzaName,
@@ -57,20 +47,15 @@ function renderSinglePizza(
 //#endregion
 
 //#region pasta functions
-function renderEachPasta(index) {
+function renderEachPasta() {
   const pastaVariationTargetRef = document.getElementById(
     "pastaVariationTarget"
   );
   pastaVariationTargetRef.innerHTML = "";
-  for (
-    let pastaIndex = 0;
-    pastaIndex < options[index].pasta.length;
-    pastaIndex++
-  ) {
-    const elementPastaName = options[index].pasta[pastaIndex].name;
-    const elementPastaPrice = options[index].pasta[pastaIndex].price;
-    const elementPastaDescription =
-      options[index].pasta[pastaIndex].description;
+  for (let pastaIndex = 0; pastaIndex < options[0].pasta.length; pastaIndex++) {
+    const elementPastaName = options[0].pasta[pastaIndex].name;
+    const elementPastaPrice = options[0].pasta[pastaIndex].price;
+    const elementPastaDescription = options[0].pasta[pastaIndex].description;
     pastaVariationTargetRef.innerHTML += renderSinglePasta(
       pastaIndex,
       elementPastaName,
@@ -99,20 +84,19 @@ function renderSinglePasta(
 //#endregion
 
 //#region desert functions
-function renderEachDesert(index) {
+function renderEachDesert() {
   const desertVariationTargetRef = document.getElementById(
     "desertVariationTarget"
   );
   desertVariationTargetRef.innerHTML = "";
   for (
     let desertIndex = 0;
-    desertIndex < options[index].desert.length;
+    desertIndex < options[0].desert.length;
     desertIndex++
   ) {
-    const elementDesertName = options[index].desert[desertIndex].name;
-    const elementDesertPrice = options[index].desert[desertIndex].price;
-    const elementDesertDescription =
-      options[index].desert[desertIndex].description;
+    const elementDesertName = options[0].desert[desertIndex].name;
+    const elementDesertPrice = options[0].desert[desertIndex].price;
+    const elementDesertDescription = options[0].desert[desertIndex].description;
     desertVariationTargetRef.innerHTML += renderSingleDesert(
       desertIndex,
       elementDesertName,
@@ -122,7 +106,7 @@ function renderEachDesert(index) {
   }
 }
 
-function renderSinglePasta(
+function renderSingleDesert(
   desertIndex,
   elementDesertName,
   elementDesertPrice,

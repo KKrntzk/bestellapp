@@ -9,7 +9,19 @@ a {
   color: rgb(221, 155, 69);
 }
 
+main {
+  height: calc(100vh -126px);
+}
+
 .main-header {
+  height: 64px;
+  background-color: rgb(221, 155, 69);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
   height: 64px;
   background-color: rgb(221, 155, 69);
   display: flex;
