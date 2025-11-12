@@ -13,7 +13,7 @@
     <script src="./script.js"></script>
     <title>Bestellapp</title>
   </head>
-  <body>
+  <body onload="renderEachElement()"">
     <header class="main-header">
       <img class="logo-img" src="./assets/img/logo/Logo.png" alt="Logo" />
       <nav></nav>
@@ -46,7 +46,7 @@
         </header>
       </section>
 
-      <section>
+      <section id="mainContent">
         <section>
           <img
             class="option-section-img"
@@ -57,90 +57,59 @@
         <header>
           <p>Pizza</p>
         </header>
-        <section id="pizzaVariationTarget" class="">
-          <section id="pizzaVariation" class="dish-option-overlay">
-            <section class="variation-specs">
-              <p id="pizzaVariationName">name</p>
-              <p id="pizzaVariationDescription">description</p>
-              <p id="pizzaVariationPrice">price</p>
-            </section>
-            <button id="addBtn" class="add-btn">+</button>
+
+        <section id="pizzaVariationTarget" class="dish-option-outer-layout">
+          
+        </section>
+          
+
+    
+          <section>
+            <img
+              class="option-section-img"
+              src="./assets/img/dishimg/fresh-pasta-5154229_1920.jpg"
+              alt="picture of noodles"
+            />
           </section>
-        </section>
-      </section>
+          <header>
+            <p>Pasta</p>
+          </header>
 
-      <section>
-        <section>
-          <img
-            class="option-section-img"
-            src="./assets/img/dishimg/fresh-pasta-5154229_1920.jpg"
-            alt="picture of noodles"
-          />
-        </section>
-        <header>
-          <p>Pasta</p>
-        </header>
-        <section>
-          <p></p>
-          <p></p>
-          <p></p>
-          <button>X</button>
-        </section>
-        <section>
-          <p></p>
-          <p></p>
-          <p></p>
-          <button>X</button>
-        </section>
-        <section>
-          <p></p>
-          <p></p>
-          <p></p>
-          <button>X</button>
-        </section>
-        <section>
-          <p></p>
-          <p></p>
-          <p></p>
-          <button>X</button>
-        </section>
-      </section>
+          <section id="pastaVariationTarget" class="">
+            <section id="pastaVariation" class="dish-option-overlay">
+              <section class="variation-specs">
+                <p id="variationName">name</p>
+                <p id="variationDescription">description</p>
+                <p id="variationPrice">price</p>
+              </section>
+              <button id="addBtn" class="add-btn">+</button>
+            </section>
+          </section>
+  
 
-      <section>
-        <section>
-          <img
-            class="option-section-img"
-            src="./assets/img/dishimg/tiramisu-7030032_1920.jpg"
-            alt="picture of deserts"
-          />
-        </section>
-        <header>
-          <p>Dessert</p>
-        </header>
-        <section>
-          <p></p>
-          <p></p>
-          <p></p>
-          <button>X</button>
-        </section>
-        <section>
-          <p></p>
-          <p></p>
-          <p></p>
-          <button>X</button>
-        </section>
-        <section>
-          <p></p>
-          <p></p>
-          <p></p>
-          <button>X</button>
-        </section>
-        <section>
-          <p></p>
-          <p></p>
-          <p></p>
-          <button>X</button>
-        </section>
+        <article>
+          <section>
+            <img
+              class="option-section-img"
+              src="./assets/img/dishimg/tiramisu-7030032_1920.jpg"
+              alt="picture of deserts"
+            />
+          </section>
+          <header>
+            <p>Dessert</p>
+          </header>
+
+          <section id="desertVariationTarget" class="">
+            <section id="desertVariation" class="dish-option-overlay">
+              <section class="variation-specs">
+                <p id="variationName">name</p>
+                <p id="variationDescription">description</p>
+                <p id="variationPrice">price</p>
+              </section>
+              <button id="addBtn" class="add-btn">+</button>
+            </section>
+          </section>
+        </article>
       </section>
     </main>
     <footer>
