@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  font-family: "Roboto";
 }
 
 a {
@@ -10,11 +11,14 @@ a {
 }
 
 main {
-  height: calc(100vh -126px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-header {
-  height: 64px;
+  height: 72px;
   background-color: rgb(221, 155, 69);
   display: flex;
   justify-content: center;
@@ -22,7 +26,7 @@ main {
 }
 
 footer {
-  height: 64px;
+  height: 72px;
   background-color: rgb(221, 155, 69);
   display: flex;
   justify-content: center;
@@ -34,9 +38,25 @@ footer {
 }
 
 .header-img {
-  height: 160px;
+  height: 250px;
   width: 100%;
   object-fit: cover;
+  margin-bottom: 24px;
+}
+
+.header-img-container {
+  width: 100%;
+}
+
+.shop-detail-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-section-container {
+  width: 90%;
 }
 
 .shop-reviews {
@@ -44,7 +64,7 @@ footer {
 }
 
 .header-nav-options {
-  height: 64px;
+  height: 72px;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -55,6 +75,22 @@ footer {
   width: 40px;
 }
 
+.main-content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-content-img-container {
+  width: 100%;
+}
+
+.option-header-container {
+  width: 90%;
+  margin-top: 20px;
+}
+
 .option-section-img {
   height: 160px;
   width: 100%;
@@ -62,11 +98,17 @@ footer {
 }
 
 .dish-option-outer-layout {
+  width: 90%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(128, 128, 128, 0.521);
+  background-color: rgba(128, 128, 128, 0.171);
+  box-shadow: 1px 1px 1px 1px #17121964;
 }
 
 .dish-option-overlay {
@@ -91,6 +133,8 @@ footer {
 .add-btn {
   height: 40px;
   width: 40px;
+  border-radius: 5px;
   font-size: 35px;
   color: rgb(221, 155, 69);
+  background-color: rgba(128, 128, 128, 0.493);
 }
