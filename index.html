@@ -102,9 +102,18 @@
 
   <section class="basket-wrapper">
     <section id="shoppingCart" class="basket">
-      <header>WARENKORB</header>
+      <header class="basket-header">WARENKORB</header>
       <div class="seperator"></div>
-      
+      <section id="singleBasketOptions()" class="single-basket-option-container">
+         <header id="singleBasketOptionName()" class="single-option-header">Name</header>
+           <section class="subsection-single-basket-option">
+            <button id="subtractBtn()" class="calc-btns">-</button>
+            <p id="singleBasketOptionAmount()" class="single-option-text">nmb x</p>
+            <button id="addBtn()" class="calc-btns">+</button>
+            <p id="singleBasketOptionPrice()" class="single-option-text">price €</p>
+            <button id="deleteBtn()" class="trash-btn"><img class="trash-icon" src="./assets/img/icons/recycle-bin.png" alt=""></button>
+           </section>
+      </section>
     </section>
   </section>
 

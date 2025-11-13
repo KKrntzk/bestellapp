@@ -160,4 +160,56 @@ footer {
   width: 100%;
   height: 500px;
   background-color: #17121964;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.single-basket-option-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.basket-header {
+  font-weight: bold;
+  padding: 10px;
+}
+
+.subsection-single-basket-option {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.single-option-header {
+  font-weight: bold;
+  padding: 10px;
+}
+
+.calc-btns {
+  height: 25px;
+  width: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: rgb(221, 155, 69);
+}
+
+.trash-icon {
+  height: 23px;
+  width: 23px;
+  object-fit: contain;
+}
+.seperator {
+  background-color: #1712199b;
+  box-shadow: 1px 1px 1px 1px #17121964;
+  width: 250px;
+  height: 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
