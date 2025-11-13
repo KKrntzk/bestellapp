@@ -1,3 +1,7 @@
+//#region variables
+let basketOptions = [];
+//#endregion
+
 //#region Functions
 
 //function to render in each dish info
@@ -27,23 +31,6 @@ function renderEachPizza() {
     );
   }
 }
-
-function renderSinglePizza(
-  pizzaIndex,
-  elementPizzaName,
-  elementPizzaPrice,
-  elementPizzaDescription
-) {
-  return `  <section class="variation">
-              <section class="variation-specs">
-                <p id="variationName(${pizzaIndex})"><strong>${elementPizzaName}</strong></p>
-                <p id="variationDescription(${pizzaIndex})">${elementPizzaDescription}</p>
-                <p id="variationPrice(${pizzaIndex})">${elementPizzaPrice}</p><br>
-              </section>
-                <button id="addBtn" class="add-btn">+</button>
-            </section>`;
-}
-
 //#endregion
 
 //#region pasta functions
@@ -64,23 +51,6 @@ function renderEachPasta() {
     );
   }
 }
-
-function renderSinglePasta(
-  pastaIndex,
-  elementPastaName,
-  elementPastaPrice,
-  elementPastaDescription
-) {
-  return `  <section class="variation">
-              <section class="variation-specs">
-                <p id="variationName(${pastaIndex})"><strong>${elementPastaName}</strong></p>
-                <p id="variationDescription(${pastaIndex})">${elementPastaDescription}</p>
-                <p id="variationPrice(${pastaIndex})">${elementPastaPrice}</p><br>
-              </section>
-                <button id="addBtn" class="add-btn">+</button>
-            </section>`;
-}
-
 //#endregion
 
 //#region desert functions
@@ -105,22 +75,42 @@ function renderEachDesert() {
     );
   }
 }
+//#endregion
+//#region adding to basket
+function addItemToBasket() {
+  const addingItemTargetRef = document.getElementById("basketOptionsTarget");
+  for (let pizzaIndex = 0; pizzaIndex < options[0].pizza.length; pizzaIndex++) {
+    const pizzaBasketName = document.getElementById(
+      `singleBasketOptionName(${pizzaIndex})`
+    );
+    const pizzaBasketPrice = document.getElementById(
+      `singleBasketOptionPrice(${pizzaIndex})`
+    );
+    addingItemTargetRef.innerHTML = renderSingleOptionIntoBasket(
+      pizzaIndex,
+      pizzaBasketName,
+      pizzaBasketPrice
+    );
+  }
+}
 
-function renderSingleDesert(
-  desertIndex,
-  elementDesertName,
-  elementDesertPrice,
-  elementDesertDescription
-) {
-  return `  <section class="variation">
-              <section class="variation-specs">
-                <p id="variationName(${desertIndex})"><strong>${elementDesertName}</strong></p>
-                <p id="variationDescription(${desertIndex})">${elementDesertDescription}</p>
-                <p id="variationPrice(${desertIndex})">${elementDesertPrice}</p><br>
-              </section>
-                <button id="addBtn" class="add-btn">+</button>
-            </section>`;
+function renderSingleOptionIntoBasket() {
+  return `<section id="singleBasketOptions(${pizzaIndex})" class="single-basket-option-container">
+           <header id="singleBasketOptionName(${pizzaIndex})" class="single-option-header">${pizzaBasketName}</header>
+             <section class="subsection-single-basket-option">
+               <button id="subtractBtn(${pizzaIndex})" class="calc-btns">-</button>
+               <p id="singleBasketOptionAmount(${pizzaIndex})" class="single-option-text">nmb x</p>
+               <button id="addBtn(${pizzaIndex})" class="calc-btns">+</button>
+               <p id="singleBasketOptionPrice(${pizzaIndex})" class="single-option-text">${pizzaBasketPrice} €</p>
+               <button id="deleteBtn(${pizzaIndex})" class="trash-btn"><img class="trash-icon" src="./assets/img/icons/recycle-bin.png" alt=""></button>
+             </section>
+          </section>`;
 }
 
 //#endregion
+//#region basket functions
+//function render single basket options into basket from array?
+
+//#endregion
+
 //#endregion

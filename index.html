@@ -3,124 +3,145 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/fonts.css" />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="shortcut icon"
       href="./assets/img/favicon/favicon-32x32.png"
       type="image/x-icon"
     />
+    <script src="./scripts/template.js"></script>
     <script src="./scripts/db.js"></script>
     <script src="./script.js"></script>
     <title>Bestellapp</title>
   </head>
-  <body onload="renderEachElement()"">
+  <body onload="renderEachElement()">
     <header class="main-header">
       <img class="logo-img" src="./assets/img/logo/Logo.png" alt="Logo" />
       <nav></nav>
     </header>
 
-<section id="contentWrapper" class="content-wrapper">
+    <section id="contentWrapper" class="content-wrapper">
+      <section class="outer-main-wrapper">
+        <main>
+          <section class="header-img-container">
+            <img
+              class="header-img"
+              src="./assets/img/dishimg/pizza-3000274_1920.jpg"
+              alt="Picture of a pizza"
+            />
+          </section>
 
-  <section class="outer-main-wrapper">
-  <main>
-      <section class="header-img-container">
-        <img
-          class="header-img"
-          src="./assets/img/dishimg/pizza-3000274_1920.jpg"
-          alt="Picture of a pizza"
-        />
+          <section id="shopDetails" class="shop-detail-container">
+            <h1 class="shop-name">Mangia Bene</h1>
+            <p class="shop-reviews">Bewertungen (4,8 von 5 Sternen)</p>
+          </section>
+
+          <section class="nav-section-container">
+            <header class="header-nav-options">
+              <img
+                class="arrow-icon"
+                src="./assets/img/icons/arrow.png"
+                alt="Arrow Icon to the right"
+              />
+              <a href="#">Pizza</a>
+              <a href="#">Pasta</a>
+              <a href="#">Desert</a>
+            </header>
+          </section>
+
+          <section id="mainContent" class="main-content-container">
+            <section class="main-content-img-container">
+              <img
+                class="option-section-img"
+                src="./assets/img/dishimg/refreshment-3227297_1920.jpg"
+                alt="Picture of a pizza"
+              />
+            </section>
+            <header class="option-header-container">
+              <h2>Pizza</h2>
+            </header>
+
+            <section
+              id="pizzaVariationTarget"
+              class="dish-option-outer-layout"
+            ></section>
+
+            <section class="main-content-img-container">
+              <img
+                class="option-section-img"
+                src="./assets/img/dishimg/fresh-pasta-5154229_1920.jpg"
+                alt="picture of noodles"
+              />
+            </section>
+            <header class="option-header-container">
+              <h2>Pasta</h2>
+            </header>
+
+            <section
+              id="pastaVariationTarget"
+              class="dish-option-outer-layout"
+            ></section>
+
+            <section class="main-content-img-container">
+              <img
+                class="option-section-img"
+                src="./assets/img/dishimg/tiramisu-7030032_1920.jpg"
+                alt="picture of deserts"
+              />
+            </section>
+            <header class="option-header-container">
+              <h2>Dessert</h2>
+            </header>
+
+            <section
+              id="desertVariationTarget"
+              class="dish-option-outer-layout"
+            ></section>
+          </section>
+        </main>
       </section>
 
-      <section id="shopDetails" class="shop-detail-container">
-        <h1 class="shop-name">Mangia Bene</h1>
-        <p class="shop-reviews">Bewertungen (4,8 von 5 Sternen)</p>
-      </section>
-
-      <section class="nav-section-container">
-        <header class="header-nav-options">
-          <img
-            class="arrow-icon"
-            src="./assets/img/icons/arrow.png"
-            alt="Arrow Icon to the right"
-          />
-          <a href="#">Pizza</a>
-          <a href="#">Pasta</a>
-          <a href="#">Desert</a>
-        </header>
-      </section>
-
-      <section id="mainContent" class="main-content-container">
-        <section class="main-content-img-container">
-          <img
-            class="option-section-img"
-            src="./assets/img/dishimg/refreshment-3227297_1920.jpg"
-            alt="Picture of a pizza"
-          />
+      <section class="basket-wrapper">
+        <section id="shoppingCart" class="basket">
+          <header class="basket-header">WARENKORB</header>
+          <div class="seperator"></div>
+          <section id="basketOptionsTarget">
+            <!-- <section
+              id="singleBasketOptions()"
+              class="single-basket-option-container"
+            >
+              <header
+                id="singleBasketOptionName()"
+                class="single-option-header"
+              >
+                Name
+              </header>
+              <section class="subsection-single-basket-option">
+                <button id="subtractBtn()" class="calc-btns">-</button>
+                <p id="singleBasketOptionAmount()" class="single-option-text">
+                  nmb x
+                </p>
+                <button id="addBtn()" class="calc-btns">+</button>
+                <p id="singleBasketOptionPrice()" class="single-option-text">
+                  price €
+                </p>
+                <button id="deleteBtn()" class="trash-btn">
+                  <img
+                    class="trash-icon"
+                    src="./assets/img/icons/recycle-bin.png"
+                    alt=""
+                  />
+                </button>
+              </section> -->
+            </section>
+          </section>
         </section>
-        <header class="option-header-container">
-          <h2>Pizza</h2>
-        </header>
-
-        <section id="pizzaVariationTarget" class="dish-option-outer-layout">
-          
-        </section>     
-    
-       <section class="main-content-img-container">
-         <img
-           class="option-section-img"
-           src="./assets/img/dishimg/fresh-pasta-5154229_1920.jpg"
-           alt="picture of noodles"
-         />
-       </section>
-       <header class="option-header-container">
-         <h2 >Pasta</h2>
-       </header>
-
-       <section id="pastaVariationTarget" class="dish-option-outer-layout">
-         
-       </section>
-         
-       <section class="main-content-img-container">
-         <img
-           class="option-section-img"
-           src="./assets/img/dishimg/tiramisu-7030032_1920.jpg"
-           alt="picture of deserts"
-         />
-       </section>
-       <header class="option-header-container">
-         <h2 >Dessert</h2>
-       </header>
-
-       <section id="desertVariationTarget" class="dish-option-outer-layout">
-            
-       </section>
-  
-      </section>
-  </main>
-  </section>
-
-  <section class="basket-wrapper">
-    <section id="shoppingCart" class="basket">
-      <header class="basket-header">WARENKORB</header>
-      <div class="seperator"></div>
-      <section id="singleBasketOptions()" class="single-basket-option-container">
-         <header id="singleBasketOptionName()" class="single-option-header">Name</header>
-           <section class="subsection-single-basket-option">
-            <button id="subtractBtn()" class="calc-btns">-</button>
-            <p id="singleBasketOptionAmount()" class="single-option-text">nmb x</p>
-            <button id="addBtn()" class="calc-btns">+</button>
-            <p id="singleBasketOptionPrice()" class="single-option-text">price €</p>
-            <button id="deleteBtn()" class="trash-btn"><img class="trash-icon" src="./assets/img/icons/recycle-bin.png" alt=""></button>
-           </section>
       </section>
     </section>
-  </section>
 
-</section>
-    
     <footer class="footer">
-      <img class="logo-img" src="./assets/img/logo/Logo.png" alt="Logo"  />
+      <img class="logo-img" src="./assets/img/logo/Logo.png" alt="Logo" />
     </footer>
   </body>
 </html>
