@@ -31,17 +31,20 @@ let options = [
       {
         name: "Pasta Arrabiata",
         description: "extra scharf",
-        price: "13,99",
+        price: 13.99,
+        amount: 1,
       },
       {
         name: "Pasta al Salmone",
         description: "mit frischem Lachs",
-        price: "16,99",
+        price: 16.99,
+        amount: 1,
       },
       {
         name: "Pasta Carbonara",
         description: "original italienisch mit Speck, Parmesan und Ei",
-        price: "13,99",
+        price: 13.99,
+        amount: 1,
       },
     ],
 
@@ -49,17 +52,20 @@ let options = [
       {
         name: "Tiramisu",
         description: "ohne Alkohol",
-        price: "7,99",
+        price: 7.99,
+        amount: 1,
       },
       {
         name: "Panna Cotta",
         description: "mit Himbeersoße",
-        price: "7,99",
+        price: 7.99,
+        amount: 1,
       },
       {
         name: "Crème Brûlée",
         description: "",
-        price: "7,99",
+        price: 7.99,
+        amount: 1,
       },
     ],
   },
