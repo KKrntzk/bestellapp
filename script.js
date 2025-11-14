@@ -120,6 +120,11 @@ function getPizzaBasketTemplates(basketIndex) {
   const pizzaBasketSubtractBtnTarget = document.getElementById(
     `singleOptionSubtractBtnTarget(${basketIndex})`
   );
+  const pizzaBasketAmountTarget = document.getElementById(
+    `singlePizzaAmountTarget(${basketIndex})`
+  );
+  const pizzaBasketAmount = basket[basketIndex].amount;
+  pizzaBasketAmountTarget.innerHTML = pizzaBasketAmount;
 
   pizzaBasketSubtractBtnTarget.innerHTML =
     renderSinglePizzaSubtractBtn(basketIndex);
@@ -163,6 +168,11 @@ function getPastaBasketTemplates(basketIndex) {
   const pastaBasketSubtractBtnTarget = document.getElementById(
     `singleOptionSubtractBtnTarget(${basketIndex})`
   );
+  const pastaBasketAmountTarget = document.getElementById(
+    `singlePastaAmountTarget(${basketIndex})`
+  );
+  const pastaBasketAmount = basket[basketIndex].amount;
+  pastaBasketAmountTarget.innerHTML = pastaBasketAmount;
   pastaBasketSubtractBtnTarget.innerHTML =
     renderSinglePastaSubtractBtn(basketIndex);
   const pastaBasketAddBtnTarget = document.getElementById(
@@ -205,6 +215,11 @@ function getDesertBasketTemplates(basketIndex) {
   const desertBasketSubtractBtnTarget = document.getElementById(
     `singleOptionSubtractBtnTarget(${basketIndex})`
   );
+  const desertBasketAmountTarget = document.getElementById(
+    `singleDesertAmountTarget(${basketIndex})`
+  );
+  const desertBasketAmount = basket[basketIndex].amount;
+  desertBasketAmountTarget.innerHTML = desertBasketAmount;
   desertBasketSubtractBtnTarget.innerHTML =
     renderSingleDesertSubtractBtn(basketIndex);
   const desertBasketAddBtnTarget = document.getElementById(

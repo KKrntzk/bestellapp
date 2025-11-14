@@ -165,6 +165,10 @@ footer {
   align-items: center;
 }
 
+.basket-options-target {
+  width: 100%;
+}
+
 .single-basket-option-container {
   width: 100%;
   display: flex;
