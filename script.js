@@ -77,9 +77,22 @@ function renderEachDesert() {
 }
 //#endregion
 //#region adding to basket
+
+function renderBasket() {
+  const optionTargetRef = document.getElementById("basketOptionsTarget");
+  optionTargetRef.innerHTML = "";
+  for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
+    optionTargetRef.innerHTML += renderPizzaOptionTarget(basketIndex);
+    getPizzaBasketTemplates(basketIndex);
+    optionTargetRef.innerHTML += renderPastaOptionTarget(basketIndex);
+    getPastaBasketTemplates(basketIndex);
+    optionTargetRef.innerHTML += renderDesertOptionTarget(basketIndex);
+    getDesertBasketTemplates(basketIndex);
+  }
+}
+
 function pushPizzaIntoBasket(pizzaIndex) {
   let foundElement = false;
-
   for (let i = 0; i < basket.length; i++) {
     const element = basket[i];
     if (element.name == options[0].pizza[pizzaIndex].name) {
@@ -92,14 +105,7 @@ function pushPizzaIntoBasket(pizzaIndex) {
   }
   renderBasket();
 }
-function renderBasket() {
-  const optionTargetRef = document.getElementById("basketOptionsTarget");
-  optionTargetRef.innerHTML = "";
-  for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
-    optionTargetRef.innerHTML += renderOptionTarget(basketIndex);
-    getPizzaBasketTemplates(basketIndex);
-  }
-}
+
 function getPizzaBasketTemplates(basketIndex) {
   const pizzaBasketNameTarget = document.getElementById(
     `singleBasketOptionName(${basketIndex})`
@@ -128,6 +134,89 @@ function getPizzaBasketTemplates(basketIndex) {
     renderSinglePizzaDeleteBtn(basketIndex);
 }
 
+function pushPastaIntoBasket(pastaIndex) {
+  let foundElement = false;
+  for (let i = 0; i < basket.length; i++) {
+    const element = basket[i];
+    if (element.name == options[0].pasta[pastaIndex].name) {
+      element.amount++;
+      foundElement = true;
+    }
+  }
+  if (!foundElement) {
+    basket.push(options[0].pasta[pastaIndex]);
+  }
+  renderBasket();
+}
+
+function getPastaBasketTemplates(basketIndex) {
+  const pastaBasketNameTarget = document.getElementById(
+    `singleBasketOptionName(${basketIndex})`
+  );
+  const pastaBasketName = basket[basketIndex].name;
+  pastaBasketNameTarget.innerHTML = pastaBasketName;
+  const pastaBasketPriceTarget = document.getElementById(
+    `singlePastaPriceTarget(${basketIndex})`
+  );
+  const pastaBasketPrice = basket[basketIndex].price;
+  pastaBasketPriceTarget.innerHTML = pastaBasketPrice;
+  const pastaBasketSubtractBtnTarget = document.getElementById(
+    `singleOptionSubtractBtnTarget(${basketIndex})`
+  );
+  pastaBasketSubtractBtnTarget.innerHTML =
+    renderSinglePastaSubtractBtn(basketIndex);
+  const pastaBasketAddBtnTarget = document.getElementById(
+    `singleOptionAddBtnTarget(${basketIndex})`
+  );
+  pastaBasketAddBtnTarget.innerHTML = renderSinglePastaAddBtn(basketIndex);
+  const pastaBasketDeleteBtnTarget = document.getElementById(
+    `singleOptionDeleteBtnTarget(${basketIndex})`
+  );
+  pastaBasketDeleteBtnTarget.innerHTML =
+    renderSinglePastaDeleteBtn(basketIndex);
+}
+
+function pushDesertIntoBasket(desertIndex) {
+  let foundElement = false;
+  for (let i = 0; i < basket.length; i++) {
+    const element = basket[i];
+    if (element.name == options[0].desert[desertIndex].name) {
+      element.amount++;
+      foundElement = true;
+    }
+  }
+  if (!foundElement) {
+    basket.push(options[0].desert[desertIndex]);
+  }
+  renderBasket();
+}
+
+function getDesertBasketTemplates(basketIndex) {
+  const desertBasketNameTarget = document.getElementById(
+    `singleBasketOptionName(${basketIndex})`
+  );
+  const desertBasketName = basket[basketIndex].name;
+  desertBasketNameTarget.innerHTML = desertBasketName;
+  const desertBasketPriceTarget = document.getElementById(
+    `singleDesertPriceTarget(${basketIndex})`
+  );
+  const desertBasketPrice = basket[basketIndex].price;
+  desertBasketPriceTarget.innerHTML = desertBasketPrice;
+  const desertBasketSubtractBtnTarget = document.getElementById(
+    `singleOptionSubtractBtnTarget(${basketIndex})`
+  );
+  desertBasketSubtractBtnTarget.innerHTML =
+    renderSingleDesertSubtractBtn(basketIndex);
+  const desertBasketAddBtnTarget = document.getElementById(
+    `singleOptionAddBtnTarget(${basketIndex})`
+  );
+  desertBasketAddBtnTarget.innerHTML = renderSingleDesertAddBtn(basketIndex);
+  const desertBasketDeleteBtnTarget = document.getElementById(
+    `singleOptionDeleteBtnTarget(${basketIndex})`
+  );
+  desertBasketDeleteBtnTarget.innerHTML =
+    renderSingleDesertDeleteBtn(basketIndex);
+}
 //#endregion
 
 //#endregion

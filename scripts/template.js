@@ -15,7 +15,7 @@ function renderSinglePizza(
             </section>`;
 }
 
-function renderOptionTarget(pizzaIndex) {
+function renderPizzaOptionTarget(pizzaIndex) {
   return ` <section id="singleBasketOptions(${pizzaIndex})" class="single-basket-option-container">
            <header id="singleBasketOptionName(${pizzaIndex})" class="single-option-header"></header>
              <section class="subsection-single-basket-option">
@@ -64,7 +64,7 @@ function renderSinglePasta(
                 <p id="variationDescription(${pastaIndex})">${elementPastaDescription}</p>
                 <p id="variationPrice(${pastaIndex})">${elementPastaPrice}</p><br>
               </section>
-                <button id="addBtn" class="add-btn">+</button>
+                <button onclick="pushPastaIntoBasket(${pastaIndex})" id="addBtn" class="add-btn">+</button>
             </section>`;
 }
 
@@ -73,7 +73,7 @@ function renderPastaOptionTarget(pastaIndex) {
            <header id="singleBasketOptionName(${pastaIndex})" class="single-option-header"></header>
              <section class="subsection-single-basket-option">
               <section id="singleOptionSubtractBtnTarget(${pastaIndex})"></section>
-               <section id="singlePastaAmountTarget(${pastaIndex})"> nmb x</section>
+               <section id="singlePastaAmountTarget(${pastaIndex})"> x</section>
                <section id="singleOptionAddBtnTarget(${pastaIndex})"></section>
                <section id="singlePastaPriceTarget(${pastaIndex})"></section>
                <section id="singleOptionDeleteBtnTarget(${pastaIndex})"></section>
@@ -81,23 +81,23 @@ function renderPastaOptionTarget(pastaIndex) {
 }
 
 function renderSinglePastaNameIntoBasket(pastaIndex) {
-  return `<p id="singleBasketOptionAmount(${pastaIndex})" class="single-option-text">${pizzaBasketName}</p>`;
+  return `<p id="singleBasketOptionAmount(${pastaIndex})" class="single-option-text">${basket[pastaIndex].name}</p>`;
 }
 
 function renderSinglePastaSubtractBtn(pastaIndex) {
   return `<button id="subtractBtn(${pastaIndex})" class="calc-btns">-</button>`;
 }
 
-function renderSinglePastaAmount(pastaIndex, pastaBasketAmount) {
-  return `<p id="singleBasketOptionAmount(${pastaIndex})" class="single-option-text">${pastaBasketAmount}</p>`;
+function renderSinglePastaAmount(pastaIndex) {
+  return `<p id="singleBasketOptionAmount(${pastaIndex})" class="single-option-text">${basket[pastaIndex].amount}</p>`;
 }
 
 function renderSinglePastaAddBtn(pastaIndex) {
   return `<button id="addBtn(${pastaIndex})" class="calc-btns">+</button>`;
 }
 
-function renderSinglePastaPrice(pastaIndex, pastaBasketPrice) {
-  return `<p id="singleBasketOptionPrice(${pastaIndex})" class="single-option-text">${pastaBasketPrice}</p>`;
+function renderSinglePastaPrice(pastaIndex) {
+  return `<p id="singleBasketOptionPrice(${pastaIndex})" class="single-option-text">${basket[pastaIndex].price}</p>`;
 }
 
 function renderSinglePastaDeleteBtn(pastaIndex) {
@@ -107,54 +107,54 @@ function renderSinglePastaDeleteBtn(pastaIndex) {
 //#endregion
 
 //#region desert
-// function renderSingleDesert(
-//   desertIndex,
-//   elementDesertName,
-//   elementDesertPrice,
-//   elementDesertDescription
-// ) {
-//   return `  <section class="variation">
-//               <section class="variation-specs">
-//                 <p id="variationName(${desertIndex})"><strong>${elementDesertName}</strong></p>
-//                 <p id="variationDescription(${desertIndex})">${elementDesertDescription}</p>
-//                 <p id="variationPrice(${desertIndex})">${elementDesertPrice}</p><br>
-//               </section>
-//                 <button id="addBtn" class="add-btn">+</button>
-//             </section>`;
-// }
+function renderSingleDesert(
+  desertIndex,
+  elementDesertName,
+  elementDesertPrice,
+  elementDesertDescription
+) {
+  return `  <section class="variation">
+              <section class="variation-specs">
+                <p id="variationName(${desertIndex})"><strong>${elementDesertName}</strong></p>
+                <p id="variationDescription(${desertIndex})">${elementDesertDescription}</p>
+                <p id="variationPrice(${desertIndex})">${elementDesertPrice}</p><br>
+              </section>
+                <button onclick="pushDesertIntoBasket(${desertIndex})" id="addBtn" class="add-btn">+</button>
+            </section>`;
+}
 
-// function renderOptionTarget(desertIndex) {
-//   return ` <section id="singleBasketOptions(${desertIndex})" class="single-basket-option-container">
-//            <header id="singleBasketOptionName(${desertIndex})" class="single-option-header"></header>
-//              <section class="subsection-single-basket-option">
-//               <section id="singleOptionSubtractBtnTarget(${desertIndex})"></section>
-//                <section id="singleDesertAmountTarget(${desertIndex})"> nmb x</section>
-//                <section id="singleOptionAddBtnTarget(${desertIndex})"></section>
-//                <section id="singleDesertPriceTarget(${desertIndex})"></section>
-//                <section id="singleOptionDeleteBtnTarget(${desertIndex})"></section>`;
-// }
+function renderDesertOptionTarget(desertIndex) {
+  return ` <section id="singleBasketOptions(${desertIndex})" class="single-basket-option-container">
+           <header id="singleBasketOptionName(${desertIndex})" class="single-option-header"></header>
+             <section class="subsection-single-basket-option">
+              <section id="singleOptionSubtractBtnTarget(${desertIndex})"></section>
+               <section id="singleDesertAmountTarget(${desertIndex})">  x</section>
+               <section id="singleOptionAddBtnTarget(${desertIndex})"></section>
+               <section id="singleDesertPriceTarget(${desertIndex})"></section>
+               <section id="singleOptionDeleteBtnTarget(${desertIndex})"></section>`;
+}
 
-// function renderSinglePastaNameIntoBasket(pastaIndex) {
-//   return `<p id="singleBasketOptionAmount(${pastaIndex})" class="single-option-text">${pizzaBasketName}</p>`;
-// }
+function renderSingleDesertNameIntoBasket(desertIndex) {
+  return `<p id="singleBasketOptionAmount(${desertIndex})" class="single-option-text">${basket[desertIndex].name}</p>`;
+}
 
-// function renderSinglePastaSubtractBtn(pastaIndex) {
-//   return `<button id="subtractBtn(${pastaIndex})" class="calc-btns">-</button>`;
-// }
+function renderSingleDesertSubtractBtn(desertIndex) {
+  return `<button id="subtractBtn(${desertIndex})" class="calc-btns">-</button>`;
+}
 
-// function renderSinglePastaAmount(pastaIndex, pastaBasketAmount) {
-//   return `<p id="singleBasketOptionAmount(${pastaIndex})" class="single-option-text">${pastaBasketAmount}</p>`;
-// }
+function renderSingleDesertAmount(desertIndex) {
+  return `<p id="singleBasketOptionAmount(${pastaIndex})" class="single-option-text">${basket[desertIndex].amount}</p>`;
+}
 
-// function renderSinglePastaAddBtn(pastaIndex) {
-//   return `<button id="addBtn(${pastaIndex})" class="calc-btns">+</button>`;
-// }
+function renderSingleDesertAddBtn(desertIndex) {
+  return `<button id="addBtn(${desertIndex})" class="calc-btns">+</button>`;
+}
 
-// function renderSinglePastaPrice(pastaIndex, pastaBasketPrice) {
-//   return `<p id="singleBasketOptionPrice(${pastaIndex})" class="single-option-text">${pastaBasketPrice}</p>`;
-// }
+function renderSingleDesertPrice(desertIndex) {
+  return `<p id="singleBasketOptionPrice(${desertIndex})" class="single-option-text">${basket[desertIndex].price}</p>`;
+}
 
-// function renderSinglePastaDeleteBtn(pastaIndex) {
-//   return `<button id="deleteBtn(${pastaIndex})" class="trash-btn"><img class="trash-icon" src="./assets/img/icons/recycle-bin.png" alt=""></button>`;
-// }
+function renderSingleDesertDeleteBtn(desertIndex) {
+  return `<button id="deleteBtn(${desertIndex})" class="trash-btn"><img class="trash-icon" src="./assets/img/icons/recycle-bin.png" alt=""></button>`;
+}
 //#endregion
