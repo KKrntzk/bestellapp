@@ -1,5 +1,5 @@
 //#region variables
-let basketOptions = [];
+
 //#endregion
 
 //#region Functions
@@ -77,39 +77,56 @@ function renderEachDesert() {
 }
 //#endregion
 //#region adding to basket
-function addItemToBasket() {
-  const addingItemTargetRef = document.getElementById("basketOptionsTarget");
-  for (let pizzaIndex = 0; pizzaIndex < options[0].pizza.length; pizzaIndex++) {
-    const pizzaBasketName = document.getElementById(
-      `singleBasketOptionName(${pizzaIndex})`
-    );
-    const pizzaBasketPrice = document.getElementById(
-      `singleBasketOptionPrice(${pizzaIndex})`
-    );
-    addingItemTargetRef.innerHTML = renderSingleOptionIntoBasket(
-      pizzaIndex,
-      pizzaBasketName,
-      pizzaBasketPrice
-    );
+function pushPizzaIntoBasket(pizzaIndex) {
+  let foundElement = false;
+
+  for (let i = 0; i < basket.length; i++) {
+    const element = basket[i];
+    if (element.name == options[0].pizza[pizzaIndex].name) {
+      element.amount++;
+      foundElement = true;
+    }
+  }
+  if (!foundElement) {
+    basket.push(options[0].pizza[pizzaIndex]);
+  }
+  renderBasket();
+}
+function renderBasket() {
+  const optionTargetRef = document.getElementById("basketOptionsTarget");
+  optionTargetRef.innerHTML = "";
+  for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
+    optionTargetRef.innerHTML += renderOptionTarget(basketIndex);
+    getPizzaBasketTemplates(basketIndex);
   }
 }
+function getPizzaBasketTemplates(basketIndex) {
+  const pizzaBasketNameTarget = document.getElementById(
+    `singleBasketOptionName(${basketIndex})`
+  );
+  const pizzaBasketName = basket[basketIndex].name;
+  pizzaBasketNameTarget.innerHTML = pizzaBasketName;
+  const pizzaBasketPriceTarget = document.getElementById(
+    `singlePizzaPriceTarget(${basketIndex})`
+  );
+  const pizzaBasketPrice = basket[basketIndex].price;
+  pizzaBasketPriceTarget.innerHTML = pizzaBasketPrice;
+  const pizzaBasketSubtractBtnTarget = document.getElementById(
+    `singleOptionSubtractBtnTarget(${basketIndex})`
+  );
 
-function renderSingleOptionIntoBasket() {
-  return `<section id="singleBasketOptions(${pizzaIndex})" class="single-basket-option-container">
-           <header id="singleBasketOptionName(${pizzaIndex})" class="single-option-header">${pizzaBasketName}</header>
-             <section class="subsection-single-basket-option">
-               <button id="subtractBtn(${pizzaIndex})" class="calc-btns">-</button>
-               <p id="singleBasketOptionAmount(${pizzaIndex})" class="single-option-text">nmb x</p>
-               <button id="addBtn(${pizzaIndex})" class="calc-btns">+</button>
-               <p id="singleBasketOptionPrice(${pizzaIndex})" class="single-option-text">${pizzaBasketPrice} €</p>
-               <button id="deleteBtn(${pizzaIndex})" class="trash-btn"><img class="trash-icon" src="./assets/img/icons/recycle-bin.png" alt=""></button>
-             </section>
-          </section>`;
+  pizzaBasketSubtractBtnTarget.innerHTML =
+    renderSinglePizzaSubtractBtn(basketIndex);
+  const pizzaBasketAddBtnTarget = document.getElementById(
+    `singleOptionAddBtnTarget(${basketIndex})`
+  );
+  pizzaBasketAddBtnTarget.innerHTML = renderSinglePizzaAddBtn(basketIndex);
+  const pizzaBasketDeleteBtnTarget = document.getElementById(
+    `singleOptionDeleteBtnTarget(${basketIndex})`
+  );
+  pizzaBasketDeleteBtnTarget.innerHTML =
+    renderSinglePizzaDeleteBtn(basketIndex);
 }
-
-//#endregion
-//#region basket functions
-//function render single basket options into basket from array?
 
 //#endregion
 
