@@ -9,6 +9,7 @@
 
 button:hover {
   cursor: pointer;
+  transform: scale(1.05);
 }
 
 a {
@@ -261,6 +262,8 @@ footer {
   transform: scale(1.05);
   transition: 0.3s ease-in-out;
 }
+
+/*dialog*/
 
 dialog::backdrop {
   background-color: #28251eb4;

@@ -273,13 +273,15 @@ function calcTotalAmount() {
 //#endregion
 //#region open dialog on order
 function openDialog() {
-  const optionTargetRef = document.getElementById("basketOptionsTarget");
-  optionTargetRef.innerHTML = "";
   const totalAmountRef = document.getElementById("totalAmount");
-  totalAmountRef.innerHTML = "";
-  basket.splice(0, basket.length);
-  const dialogRef = document.getElementById("dialogPopup");
-  dialogRef.showModal();
+  if (totalAmountRef.innerHTML.includes(".")) {
+    const optionTargetRef = document.getElementById("basketOptionsTarget");
+    optionTargetRef.innerHTML = "";
+    totalAmountRef.innerHTML = "";
+    basket.splice(0, basket.length);
+    const dialogRef = document.getElementById("dialogPopup");
+    dialogRef.showModal();
+  }
 }
 
 function closeDialog() {
