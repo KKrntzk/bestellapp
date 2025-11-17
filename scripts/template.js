@@ -39,7 +39,7 @@ function renderSinglePizzaAmount(pizzaIndex) {
 }
 
 function renderSinglePizzaAddBtn(pizzaIndex) {
-  return `<button id="addBtn(${pizzaIndex})" class="calc-btns">+</button>`;
+  return `<button onclick="addItemToBasket(${pizzaIndex})" id="addBtn(${pizzaIndex})" class="calc-btns">+</button>`;
 }
 
 function renderSinglePizzaPrice(pizzaIndex) {
@@ -93,7 +93,7 @@ function renderSinglePastaAmount(pastaIndex) {
 }
 
 function renderSinglePastaAddBtn(pastaIndex) {
-  return `<button id="addBtn(${pastaIndex})" class="calc-btns">+</button>`;
+  return `<button onclick="addItemToBasket(${pastaIndex})" id="addBtn(${pastaIndex})" class="calc-btns">+</button>`;
 }
 
 function renderSinglePastaPrice(pastaIndex) {
@@ -147,7 +147,7 @@ function renderSingleDesertAmount(desertIndex) {
 }
 
 function renderSingleDesertAddBtn(desertIndex) {
-  return `<button id="addBtn(${desertIndex})" class="calc-btns">+</button>`;
+  return `<button onclick="addItemToBasket(${desertIndex})" id="addBtn(${desertIndex})" class="calc-btns">+</button>`;
 }
 
 function renderSingleDesertPrice(desertIndex) {

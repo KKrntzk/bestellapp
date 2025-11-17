@@ -240,8 +240,9 @@ function getDesertBasketTemplates(basketIndex) {
 }
 //#endregion
 
-//#region substract from Basket
+//#region calc Amount of Basket
 function deleteFromBasket(basketIndex) {
+  basket[basketIndex].amount = 1;
   basket.splice([basketIndex], 1);
   const singleBasketOptionTargetRef = document.getElementById(
     `singleBasketOptions(${basketIndex})`
@@ -250,13 +251,18 @@ function deleteFromBasket(basketIndex) {
 }
 
 function substractItemFromBasket(basketIndex) {
-  if (basket[basketIndex].amount > 1) {
+  if (basket[basketIndex].amount >= 1) {
     basket[basketIndex].amount = basket[basketIndex].amount - 1;
     renderBasket();
   }
-  if ((basket[basketIndex].amount = 1)) {
+  if (basket[basketIndex].amount == 0) {
     deleteFromBasket(basketIndex);
   }
+}
+
+function addItemToBasket(basketIndex) {
+  basket[basketIndex].amount = basket[basketIndex].amount + 1;
+  renderBasket();
 }
 
 //#endregion
