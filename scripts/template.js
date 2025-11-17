@@ -47,7 +47,7 @@ function renderSinglePizzaPrice(pizzaIndex) {
 }
 
 function renderSinglePizzaDeleteBtn(pizzaIndex) {
-  return `<button id="deleteBtn(${pizzaIndex})" class="trash-btn"><img class="trash-icon" src="./assets/img/icons/recycle-bin.png" alt=""></button>`;
+  return `<button onclick="deleteFromBasket(${pizzaIndex})" id="deleteBtn(${pizzaIndex})" class="trash-btn"><img class="trash-icon" src="./assets/img/icons/recycle-bin.png" alt=""></button>`;
 }
 //#endregion
 
@@ -101,7 +101,7 @@ function renderSinglePastaPrice(pastaIndex) {
 }
 
 function renderSinglePastaDeleteBtn(pastaIndex) {
-  return `<button id="deleteBtn(${pastaIndex})" class="trash-btn"><img class="trash-icon" src="./assets/img/icons/recycle-bin.png" alt=""></button>`;
+  return `<button onclick="deleteFromBasket(${pastaIndex})" id="deleteBtn(${pastaIndex})" class="trash-btn"><img class="trash-icon" src="./assets/img/icons/recycle-bin.png" alt=""></button>`;
 }
 
 //#endregion
@@ -155,6 +155,6 @@ function renderSingleDesertPrice(desertIndex) {
 }
 
 function renderSingleDesertDeleteBtn(desertIndex) {
-  return `<button id="deleteBtn(${desertIndex})" class="trash-btn"><img class="trash-icon" src="./assets/img/icons/recycle-bin.png" alt=""></button>`;
+  return `<button onclick="deleteFromBasket(${desertIndex})" id="deleteBtn(${desertIndex})" class="trash-btn"><img class="trash-icon" src="./assets/img/icons/recycle-bin.png" alt=""></button>`;
 }
 //#endregion

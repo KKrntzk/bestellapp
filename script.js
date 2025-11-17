@@ -242,8 +242,9 @@ function getDesertBasketTemplates(basketIndex) {
 
 //#region substract from Basket
 function deleteFromBasket(basketIndex) {
+  basket.splice([basketIndex], 1);
   const singleBasketOptionTargetRef = document.getElementById(
-    `singleBasketOptionAmount(${basketIndex})`
+    `singleBasketOptions(${basketIndex})`
   );
   singleBasketOptionTargetRef.innerHTML = "";
 }
@@ -257,11 +258,6 @@ function substractItemFromBasket(basketIndex) {
     deleteFromBasket(basketIndex);
   }
 }
-
-// const singleBasketOptionAmountTargetRef = document.getElementById(
-//   `singleBasketOptionAmount(${basketIndex})`
-// ).value;
-// singleBasketOptionAmountTargetRef.value = value - 1;
 
 //#endregion
 //#endregion
