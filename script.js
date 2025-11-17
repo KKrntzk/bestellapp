@@ -277,6 +277,7 @@ function openDialog() {
   optionTargetRef.innerHTML = "";
   const totalAmountRef = document.getElementById("totalAmount");
   totalAmountRef.innerHTML = "";
+  basket.splice(0, basket.length);
   const dialogRef = document.getElementById("dialogPopup");
   dialogRef.showModal();
 }
