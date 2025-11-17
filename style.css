@@ -92,6 +92,7 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
 .main-content-img-container {
   width: 100%;
 }
@@ -135,6 +136,7 @@ footer {
 }
 
 .variation-specs {
+  width: 90%;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -156,6 +158,7 @@ footer {
 .content-wrapper {
   display: flex;
   flex-grow: 1;
+  position: relative;
 }
 
 .outer-main-wrapper {
@@ -194,6 +197,7 @@ footer {
 .basket-header {
   font-weight: bold;
   padding: 10px;
+  padding-top: 20px;
 }
 
 .subsection-single-basket-option {
@@ -302,4 +306,26 @@ dialog[open] {
   font-size: 18px;
   font-weight: bold;
   color: rgb(221, 155, 69);
+}
+
+/*media queries*/
+
+@media (max-width: 750px) {
+  .add-btn {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .basket-wrapper {
+    display: none;
+  }
+
+  .outer-main-wrapper {
+    width: 100%;
+  }
+  /* .resp-basket {
+    transform: translateX(100%);
+  } */
 }
