@@ -5,15 +5,12 @@
 //#region Functions
 
 //function to render in each dish info
-
 function renderEachElement() {
   renderEachPizza();
   renderEachPasta();
   renderEachDesert();
 }
-
 //#region pizza functions
-
 function renderEachPizza() {
   const pizzaVariationTargetRef = document.getElementById(
     "pizzaVariationTarget"
@@ -32,7 +29,6 @@ function renderEachPizza() {
   }
 }
 //#endregion
-
 //#region pasta functions
 function renderEachPasta() {
   const pastaVariationTargetRef = document.getElementById(
@@ -52,7 +48,6 @@ function renderEachPasta() {
   }
 }
 //#endregion
-
 //#region desert functions
 function renderEachDesert() {
   const desertVariationTargetRef = document.getElementById(
@@ -77,7 +72,6 @@ function renderEachDesert() {
 }
 //#endregion
 //#region adding to basket
-
 function renderBasket() {
   const optionTargetRef = document.getElementById("basketOptionsTarget");
   optionTargetRef.innerHTML = "";
@@ -239,7 +233,6 @@ function getDesertBasketTemplates(basketIndex) {
     renderSingleDesertDeleteBtn(basketIndex);
 }
 //#endregion
-
 //#region calc Amount of Basket
 function deleteFromBasket(basketIndex) {
   basket[basketIndex].amount = 1;

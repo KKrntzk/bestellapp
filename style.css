@@ -4,6 +4,11 @@
   box-sizing: border-box;
   text-decoration: none;
   font-family: "Roboto";
+  scroll-behavior: smooth;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 a {
@@ -169,6 +174,7 @@ footer {
 }
 
 .basket-options-target {
+  height: 400px;
   width: 100%;
 }
 
