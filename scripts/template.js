@@ -11,7 +11,7 @@ function renderSinglePizza(
                 <p id="variationDescription(${pizzaIndex})">${elementPizzaDescription}</p>
                 <p id="variationPrice(${pizzaIndex})">${elementPizzaPrice}</p><br>
               </section>
-                <button onclick="pushPizzaIntoBasket(${pizzaIndex})" id="addBtn" class="add-btn">+</button>
+                <button onclick="pushPizzaIntoBasket(${pizzaIndex}); calcTotalAmount();" id="addBtn" class="add-btn">+</button>
             </section>`;
 }
 
@@ -31,7 +31,7 @@ function renderSinglePizzaNameIntoBasket(pizzaIndex) {
 }
 
 function renderSinglePizzaSubtractBtn(pizzaIndex) {
-  return `<button onclick="substractItemFromBasket(${pizzaIndex})" id="subtractBtn(${pizzaIndex})" class="calc-btns">-</button>`;
+  return `<button onclick="substractItemFromBasket(${pizzaIndex}); calcTotalAmount();" id="subtractBtn(${pizzaIndex})" class="calc-btns">-</button>`;
 }
 
 function renderSinglePizzaAmount(pizzaIndex) {
@@ -39,7 +39,7 @@ function renderSinglePizzaAmount(pizzaIndex) {
 }
 
 function renderSinglePizzaAddBtn(pizzaIndex) {
-  return `<button onclick="addItemToBasket(${pizzaIndex})" id="addBtn(${pizzaIndex})" class="calc-btns">+</button>`;
+  return `<button onclick="addItemToBasket(${pizzaIndex}); calcTotalAmount();" id="addBtn(${pizzaIndex})" class="calc-btns">+</button>`;
 }
 
 function renderSinglePizzaPrice(pizzaIndex) {
@@ -64,7 +64,7 @@ function renderSinglePasta(
                 <p id="variationDescription(${pastaIndex})">${elementPastaDescription}</p>
                 <p id="variationPrice(${pastaIndex})">${elementPastaPrice}</p><br>
               </section>
-                <button onclick="pushPastaIntoBasket(${pastaIndex})" id="addBtn" class="add-btn">+</button>
+                <button onclick="pushPastaIntoBasket(${pastaIndex}); calcTotalAmount();" id="addBtn" class="add-btn">+</button>
             </section>`;
 }
 
@@ -85,7 +85,7 @@ function renderSinglePastaNameIntoBasket(pastaIndex) {
 }
 
 function renderSinglePastaSubtractBtn(pastaIndex) {
-  return `<button onclick="substractItemFromBasket(${pastaIndex})" id="subtractBtn(${pastaIndex})" class="calc-btns">-</button>`;
+  return `<button onclick="substractItemFromBasket(${pastaIndex}); calcTotalAmount();" id="subtractBtn(${pastaIndex})" class="calc-btns">-</button>`;
 }
 
 function renderSinglePastaAmount(pastaIndex) {
@@ -93,7 +93,7 @@ function renderSinglePastaAmount(pastaIndex) {
 }
 
 function renderSinglePastaAddBtn(pastaIndex) {
-  return `<button onclick="addItemToBasket(${pastaIndex})" id="addBtn(${pastaIndex})" class="calc-btns">+</button>`;
+  return `<button onclick="addItemToBasket(${pastaIndex}); calcTotalAmount();" id="addBtn(${pastaIndex})" class="calc-btns">+</button>`;
 }
 
 function renderSinglePastaPrice(pastaIndex) {
@@ -119,7 +119,7 @@ function renderSingleDesert(
                 <p id="variationDescription(${desertIndex})">${elementDesertDescription}</p>
                 <p id="variationPrice(${desertIndex})">${elementDesertPrice}</p><br>
               </section>
-                <button onclick="pushDesertIntoBasket(${desertIndex})" id="addBtn" class="add-btn">+</button>
+                <button onclick="pushDesertIntoBasket(${desertIndex}); calcTotalAmount();" id="addBtn" class="add-btn">+</button>
             </section>`;
 }
 
@@ -139,7 +139,7 @@ function renderSingleDesertNameIntoBasket(desertIndex) {
 }
 
 function renderSingleDesertSubtractBtn(desertIndex) {
-  return `<button onclick="substractItemFromBasket(${desertIndex})" id="subtractBtn(${desertIndex})" class="calc-btns">-</button>`;
+  return `<button onclick="substractItemFromBasket(${desertIndex}); calcTotalAmount();" id="subtractBtn(${desertIndex})" class="calc-btns">-</button>`;
 }
 
 function renderSingleDesertAmount(desertIndex) {
@@ -147,7 +147,7 @@ function renderSingleDesertAmount(desertIndex) {
 }
 
 function renderSingleDesertAddBtn(desertIndex) {
-  return `<button onclick="addItemToBasket(${desertIndex})" id="addBtn(${desertIndex})" class="calc-btns">+</button>`;
+  return `<button onclick="addItemToBasket(${desertIndex}); calcTotalAmount();" id="addBtn(${desertIndex})" class="calc-btns">+</button>`;
 }
 
 function renderSingleDesertPrice(desertIndex) {

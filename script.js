@@ -248,6 +248,8 @@ function deleteFromBasket(basketIndex) {
     `singleBasketOptions(${basketIndex})`
   );
   singleBasketOptionTargetRef.innerHTML = "";
+  const totalAmountRef = document.getElementById("totalAmount");
+  totalAmountRef.innerHTML = "";
 }
 
 function substractItemFromBasket(basketIndex) {
@@ -264,6 +266,17 @@ function addItemToBasket(basketIndex) {
   basket[basketIndex].amount = basket[basketIndex].amount + 1;
   renderBasket();
 }
-
 //#endregion
+//#region calc total amount
+function calcTotalAmount() {
+  const totalAmountRef = document.getElementById("totalAmount");
+  const totalCalcAmount = basket
+    .reduce((sum, item) => {
+      return sum + item.price * item.amount + 5;
+    }, 0)
+    .toFixed(2);
+  totalAmountRef.innerHTML = totalCalcAmount + "€";
+}
+//#endregion
+
 //#endregion
