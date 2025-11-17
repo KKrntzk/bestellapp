@@ -241,3 +241,16 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+
+.order-btn {
+  width: 200px;
+  padding: 10px;
+  background-color: rgb(80, 181, 228);
+  border-color: none;
+  border-radius: 25px;
+}
+
+.order-btn:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
