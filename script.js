@@ -273,6 +273,10 @@ function calcTotalAmount() {
 //#endregion
 //#region open dialog on order
 function openDialog() {
+  const optionTargetRef = document.getElementById("basketOptionsTarget");
+  optionTargetRef.innerHTML = "";
+  const totalAmountRef = document.getElementById("totalAmount");
+  totalAmountRef.innerHTML = "";
   const dialogRef = document.getElementById("dialogPopup");
   dialogRef.showModal();
 }
