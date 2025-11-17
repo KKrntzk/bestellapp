@@ -248,9 +248,10 @@ footer {
   background-color: rgb(80, 181, 228);
   border-color: none;
   border-radius: 25px;
+  font-weight: bold;
 }
 
 .order-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: 0.3s ease-in-out;
 }

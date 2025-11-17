@@ -120,9 +120,19 @@
               <p id="totalAmount"></p>              
             </div>            
           </section>
-            <button class="order-btn">BESTELLEN</button>
+            <button onclick="openDialog()" class="order-btn">BESTELLEN</button>
         </section>
       </section>
+
+      <section id="dialog">
+        <dialog id="dialogPopup">
+        <header class="dialog-header">
+             <button role="closing-dialog" class="dialog-btns" onclick="closeDialog()">x</button>
+        </header>
+        <p>Deine Bestellung wurde erfolgreich abgeschickt und wird gleich frisch zubereitet!</p>
+      </dialog>
+      </section>
+
         </section>
       </section>
     </section>

@@ -271,5 +271,15 @@ function calcTotalAmount() {
   totalAmountRef.innerHTML = totalCalcAmount + "€";
 }
 //#endregion
+//#region open dialog on order
+function openDialog() {
+  const dialogRef = document.getElementById("dialogPopup");
+  dialogRef.showModal();
+}
 
+function closeDialog() {
+  const dialogRef = document.getElementById("dialogPopup");
+  dialogRef.close();
+}
+//#endregion
 //#endregion
