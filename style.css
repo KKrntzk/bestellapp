@@ -133,6 +133,9 @@ footer {
 .add-btn {
   height: 40px;
   width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 5px;
   font-size: 35px;
   color: rgb(221, 155, 69);

@@ -82,12 +82,18 @@ function renderBasket() {
   const optionTargetRef = document.getElementById("basketOptionsTarget");
   optionTargetRef.innerHTML = "";
   for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
-    optionTargetRef.innerHTML += renderPizzaOptionTarget(basketIndex);
-    getPizzaBasketTemplates(basketIndex);
-    optionTargetRef.innerHTML += renderPastaOptionTarget(basketIndex);
-    getPastaBasketTemplates(basketIndex);
-    optionTargetRef.innerHTML += renderDesertOptionTarget(basketIndex);
-    getDesertBasketTemplates(basketIndex);
+    if (basket[0].name.includes("Pizza")) {
+      optionTargetRef.innerHTML += renderPizzaOptionTarget(basketIndex);
+      getPizzaBasketTemplates(basketIndex);
+    }
+    if (basket[0].name.includes("Pasta")) {
+      optionTargetRef.innerHTML += renderPastaOptionTarget(basketIndex);
+      getPastaBasketTemplates(basketIndex);
+    }
+    if (basket[0].name.includes(!"Pizza" && !"Pasta")) {
+      optionTargetRef.innerHTML += renderDesertOptionTarget(basketIndex);
+      getDesertBasketTemplates(basketIndex);
+    }
   }
 }
 
@@ -234,4 +240,21 @@ function getDesertBasketTemplates(basketIndex) {
 }
 //#endregion
 
+//#region substract from Basket
+function deleteFromBasket() {
+  const singleBasketOptionTargetRef = document.getElementById(
+    "singleBasketOptions(baskeetIndex)"
+  );
+  singleBasketOptionTargetRef.innerHTML = "";
+}
+
+function substractItemFromBasket() {
+  for (let basketIndex = 0; basketIndex < basket.length; basketIndex++);
+  const singleBasketOptionAmountTargetRef = document.getElementById(
+    `singleBasketOptionAmount(${basketIndex})`
+  );
+  singleBasketOptionAmountTargetRef.value = value - 1;
+}
+
+//#endregion
 //#endregion

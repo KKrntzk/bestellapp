@@ -139,7 +139,7 @@ function renderSingleDesertNameIntoBasket(desertIndex) {
 }
 
 function renderSingleDesertSubtractBtn(desertIndex) {
-  return `<button id="subtractBtn(${desertIndex})" class="calc-btns">-</button>`;
+  return `<button onclick="substractItemFromBasket()" id="subtractBtn(${desertIndex})" class="calc-btns">-</button>`;
 }
 
 function renderSingleDesertAmount(desertIndex) {
