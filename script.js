@@ -241,20 +241,27 @@ function getDesertBasketTemplates(basketIndex) {
 //#endregion
 
 //#region substract from Basket
-function deleteFromBasket() {
+function deleteFromBasket(basketIndex) {
   const singleBasketOptionTargetRef = document.getElementById(
-    "singleBasketOptions(baskeetIndex)"
+    `singleBasketOptionAmount(${basketIndex})`
   );
   singleBasketOptionTargetRef.innerHTML = "";
 }
 
-function substractItemFromBasket() {
-  for (let basketIndex = 0; basketIndex < basket.length; basketIndex++);
-  const singleBasketOptionAmountTargetRef = document.getElementById(
-    `singleBasketOptionAmount(${basketIndex})`
-  );
-  singleBasketOptionAmountTargetRef.value = value - 1;
+function substractItemFromBasket(basketIndex) {
+  if (basket[basketIndex].amount > 1) {
+    basket[basketIndex].amount = basket[basketIndex].amount - 1;
+    renderBasket();
+  }
+  if ((basket[basketIndex].amount = 1)) {
+    deleteFromBasket(basketIndex);
+  }
 }
+
+// const singleBasketOptionAmountTargetRef = document.getElementById(
+//   `singleBasketOptionAmount(${basketIndex})`
+// ).value;
+// singleBasketOptionAmountTargetRef.value = value - 1;
 
 //#endregion
 //#endregion
