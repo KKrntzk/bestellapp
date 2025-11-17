@@ -15,6 +15,10 @@ a {
   color: rgb(221, 155, 69);
 }
 
+a:hover {
+  color: rgb(198, 112, 0);
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -171,6 +175,8 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: sticky;
+  top: 15px;
 }
 
 .basket-options-target {
@@ -254,4 +260,43 @@ footer {
 .order-btn:hover {
   transform: scale(1.05);
   transition: 0.3s ease-in-out;
+}
+
+dialog::backdrop {
+  background-color: #28251eb4;
+}
+
+dialog {
+  padding: 40px;
+  border-radius: 25px;
+}
+
+dialog[open] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.dialog-header {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding-bottom: 20px;
+}
+
+.dialog-btn {
+  height: 30px;
+  width: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(221, 155, 69);
 }
