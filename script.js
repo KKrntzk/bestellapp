@@ -289,4 +289,18 @@ function closeDialog() {
   dialogRef.close();
 }
 //#endregion
+
+//#region overlay
+function showOverlay() {
+  const overlayRef = document.getElementById("overlay-basket-resp");
+  overlayRef.classList.remove("overlay-display-none");
+  overlayRef.classList.add("overlay-display-block");
+}
+
+function hideOverlay() {
+  const overlayRef = document.getElementById("overlay-basket-resp");
+  overlayRef.classList.add("overlay-display-none");
+  overlayRef.classList.remove("overlay-display-block");
+}
+//#endregion
 //#endregion

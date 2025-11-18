@@ -154,6 +154,10 @@ footer {
   background-color: rgba(128, 128, 128, 0.493);
 }
 
+.btn-basket-resp {
+  display: none;
+}
+
 /*shopping cart*/
 .content-wrapper {
   display: flex;
@@ -267,6 +271,10 @@ footer {
   transition: 0.3s ease-in-out;
 }
 
+.overlay-resp {
+  display: none;
+}
+
 /*dialog*/
 
 dialog::backdrop {
@@ -325,7 +333,60 @@ dialog[open] {
   .outer-main-wrapper {
     width: 100%;
   }
-  /* .resp-basket {
-    transform: translateX(100%);
-  } */
+
+  .resp-basket-bottom {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .btn-basket-resp {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(80, 181, 228);
+    border-color: none;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    font-size: 20px;
+  }
+
+  .overlay-resp {
+    display: block;
+  }
+
+  .overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(243, 243, 243, 0.863);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .overlay-display-none {
+    display: none;
+  }
+
+  .overlay-display.blockt {
+    display: block;
+  }
+
+  .overlay-btn {
+    height: 30px;
+    width: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(221, 155, 69);
+    margin: 20px;
+  }
+
+  .overlay-header;
 }

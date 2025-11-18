@@ -99,6 +99,42 @@
               class="dish-option-outer-layout"
             ></section>
           </section>
+
+
+        
+          <section class="resp-basket-bottom">
+            <button  onclick="showOverlay()" class="btn-basket-resp">WARENKORB</button>
+          </section>
+          
+
+          <section class="overlay-resp" >
+            <div id="overlay-basket-resp" class="overlay overlay-display-none">
+              <header class="overlay-header">
+                <button onclick="hideOverlay()" id="overlayBtn" class="overlay-btn">x</button>
+              </header>
+              <section id="shoppingCart" class="basket">
+              <header class="basket-header">WARENKORB</header>
+               <div class="seperator"></div>
+              <section id="basketOptionsTarget" class="basket-options-target">
+     
+              </section>
+               <div class="seperator"></div>
+              <section class="total-section">
+               <div class="total-section-spacing">
+                <p><strong>Lieferkosten :</strong></p>
+                <p>5€</p>
+               </div>
+               <div class="total-section-spacing">
+                <p><strong>Gesamt :</strong></p>
+                <p id="totalAmount"></p>              
+               </div>            
+              </section>
+               <button onclick="openDialog()" class="order-btn">BESTELLEN</button>
+              </section>
+            </div>
+            
+          </section>
+
         </main>
       </section>
 
