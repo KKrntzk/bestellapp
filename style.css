@@ -330,6 +330,7 @@ dialog[open] {
 @media (max-width: 600px) {
   .basket-wrapper {
     display: none;
+    height: 100%;
   }
 
   .outer-main-wrapper {
@@ -346,14 +347,13 @@ dialog[open] {
     display: block;
     width: 90%;
     padding: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
     background-color: rgb(80, 181, 228);
-    border-color: none;
     border-radius: 25px;
     font-weight: bold;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     font-size: 20px;
+    position: fixed;
+    bottom: 0;
   }
 
   .overlay-resp {
@@ -363,7 +363,7 @@ dialog[open] {
   .overlay {
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     top: 0;
     left: 0;
     right: 0;
@@ -396,6 +396,7 @@ dialog[open] {
     width: 100%;
     display: flex;
     justify-content: end;
+    z-index: 3;
   }
 
   .seperator {
@@ -403,17 +404,24 @@ dialog[open] {
   }
 
   .basket-options-target {
-    height: 500px;
+    height: 600px;
   }
 
   .basket-resp-overlay {
     display: block;
     z-index: 2;
     position: absolute;
-    top: 0;
-    right: auto;
-    left: auto;
-
     width: 100%;
+  }
+
+  .basket {
+    height: 700px;
+    padding-bottom: 20px;
+    position: sticky;
+    top: 64px;
+  }
+
+  .main-content-container {
+    margin-bottom: 50px;
   }
 }
