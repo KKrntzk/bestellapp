@@ -295,12 +295,46 @@ function showOverlay() {
   const overlayRef = document.getElementById("overlay-basket-resp");
   overlayRef.classList.remove("overlay-display-none");
   overlayRef.classList.add("overlay-display-block");
+  const basketOverlayRef = document.getElementById("shoppingcart-resp");
+  basketOverlayRef.classList.add("basket-resp-overlay");
 }
 
 function hideOverlay() {
   const overlayRef = document.getElementById("overlay-basket-resp");
-  overlayRef.classList.add("overlay-display-none");
   overlayRef.classList.remove("overlay-display-block");
+  overlayRef.classList.add("overlay-display-none");
+  const basketOverlayRef = document.getElementById("shoppingcart-resp");
+  basketOverlayRef.classList.remove("basket-resp-overlay");
 }
-//#endregion
-//#endregion
+
+// function overlayTemplate() {
+//   return ` <header class="overlay-header">
+//                 <button onclick="hideOverlay()" id="overlayBtn" class="overlay-btn">x</button>
+//               </header>
+//               <section id="shoppingCart" class="basket">
+//               <header class="basket-header">WARENKORB</header>
+//                <div class="seperator"></div>
+//               <section id="basketOptionsTarget" class="basket-options-target">
+
+//               </section>
+//                <div class="seperator"></div>
+//               <section class="total-section">
+//                <div class="total-section-spacing">
+//                 <p><strong>Lieferkosten :</strong></p>
+//                 <p>5€</p>
+//                </div>
+//                <div class="total-section-spacing">
+//                 <p><strong>Gesamt :</strong></p>
+//                 <p id="totalAmount"></p>
+//                </div>
+//               </section>
+//                <button onclick="openDialog()" class="order-btn">BESTELLEN</button>
+//               </section>`;
+// }
+
+// function renderOverlay() {
+//   const overlayTargetRef = document.getElementById("overlay-basket-resp");
+//   overlayTargetRef.innerHTML = overlayTemplate();
+// }
+// #endregion
+// #endregion

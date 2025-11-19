@@ -190,6 +190,7 @@ footer {
 .basket-options-target {
   height: 300px;
   width: 100%;
+  overflow: auto;
 }
 
 .single-basket-option-container {
@@ -233,6 +234,7 @@ footer {
   width: 23px;
   object-fit: contain;
 }
+
 .seperator {
   background-color: #1712199b;
   box-shadow: 1px 1px 1px 1px #17121964;
@@ -369,13 +371,15 @@ dialog[open] {
     background-color: rgba(243, 243, 243, 0.863);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    z-index: 1;
   }
 
   .overlay-display-none {
     display: none;
   }
 
-  .overlay-display.blockt {
+  .overlay-display-block {
     display: block;
   }
 
@@ -388,5 +392,28 @@ dialog[open] {
     margin: 20px;
   }
 
-  .overlay-header;
+  .overlay-header {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+
+  .seperator {
+    width: 90%;
+  }
+
+  .basket-options-target {
+    height: 500px;
+  }
+
+  .basket-resp-overlay {
+    display: block;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: auto;
+    left: auto;
+
+    width: 100%;
+  }
 }
