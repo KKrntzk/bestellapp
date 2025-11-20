@@ -35,11 +35,7 @@ function renderEachPasta() {
 function renderEachDesert() {
   const desertVariationTargetRef = document.getElementById("desertVariationTarget");
   desertVariationTargetRef.innerHTML = "";
-  for (
-    let desertIndex = 0;
-    desertIndex < options[0].desert.length;
-    desertIndex++
-  ) {
+  for (let desertIndex = 0;desertIndex < options[0].desert.length;desertIndex++) {
     const elementDesertName = options[0].desert[desertIndex].name;
     const elementDesertPrice = options[0].desert[desertIndex].price;
     const elementDesertDescription = options[0].desert[desertIndex].description;
@@ -171,11 +167,12 @@ function getDesertBasketTemplates(basketIndex) {
 //#region calc Amount of Basket
 function deleteFromBasket(basketIndex) {
   basket[basketIndex].amount = 1;
-  basket.splice([basketIndex], 1);
+  basket.splice(basketIndex, 1);
   const singleBasketOptionTargetRef = document.getElementById(`singleBasketOptions(${basketIndex})`);
   singleBasketOptionTargetRef.innerHTML = "";
   const totalAmountRef = document.getElementById("totalAmount");
   totalAmountRef.innerHTML = "";
+  calcTotalAmount();
 }
 
 function substractItemFromBasket(basketIndex) {
@@ -207,6 +204,10 @@ function calcTotalAmount() {
 //#endregion
 //#region open dialog on order
 function openDialog() {
+  for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
+    const element = basket[basketIndex];
+    element.amount = 1;
+  }
   const totalAmountRef = document.getElementById("totalAmount");
   if (totalAmountRef.innerHTML.includes(".")) {
     const optionTargetRef = document.getElementById("basketOptionsTarget");
