@@ -27,16 +27,32 @@ main {
   align-items: center;
 }
 
+.header-section {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(221, 155, 69);
+}
+
 .main-header {
   height: 72px;
+  max-width: 1920px;
+  width: 100%;
   background-color: rgb(221, 155, 69);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.footer-section {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(221, 155, 69);
+}
+
 footer {
   height: 72px;
+  max-width: 1920px;
+  width: 100%;
   background-color: rgb(221, 155, 69);
   display: flex;
   justify-content: center;
@@ -174,7 +190,14 @@ footer {
 }
 
 /*shopping cart*/
+.content-wrapper-section {
+  display: flex;
+  justify-content: center;
+}
+
 .content-wrapper {
+  max-width: 1920px;
+  width: 100%;
   display: flex;
   flex-grow: 1;
   position: relative;
@@ -344,9 +367,7 @@ dialog[open] {
     height: 30px;
     width: 30px;
   }
-}
 
-@media (max-width: 600px) {
   .basket-wrapper {
     display: none;
     height: 100%;
