@@ -7,9 +7,7 @@ function renderEachElement() {
 
 //#region pizza functions
 function renderEachPizza() {
-  const pizzaVariationTargetRef = document.getElementById(
-    "pizzaVariationTarget"
-  );
+  const pizzaVariationTargetRef = document.getElementById("pizzaVariationTarget");
   pizzaVariationTargetRef.innerHTML = "";
   for (let pizzaIndex = 0; pizzaIndex < options[0].pizza.length; pizzaIndex++) {
     const elementPizzaName = options[0].pizza[pizzaIndex].name;
@@ -22,9 +20,7 @@ function renderEachPizza() {
 //#endregion
 //#region pasta functions
 function renderEachPasta() {
-  const pastaVariationTargetRef = document.getElementById(
-    "pastaVariationTarget"
-  );
+  const pastaVariationTargetRef = document.getElementById("pastaVariationTarget");
   pastaVariationTargetRef.innerHTML = "";
   for (let pastaIndex = 0; pastaIndex < options[0].pasta.length; pastaIndex++) {
     const elementPastaName = options[0].pasta[pastaIndex].name;
@@ -37,9 +33,7 @@ function renderEachPasta() {
 //#endregion
 //#region desert functions
 function renderEachDesert() {
-  const desertVariationTargetRef = document.getElementById(
-    "desertVariationTarget"
-  );
+  const desertVariationTargetRef = document.getElementById("desertVariationTarget");
   desertVariationTargetRef.innerHTML = "";
   for (
     let desertIndex = 0;
@@ -178,9 +172,7 @@ function getDesertBasketTemplates(basketIndex) {
 function deleteFromBasket(basketIndex) {
   basket[basketIndex].amount = 1;
   basket.splice([basketIndex], 1);
-  const singleBasketOptionTargetRef = document.getElementById(
-    `singleBasketOptions(${basketIndex})`
-  );
+  const singleBasketOptionTargetRef = document.getElementById(`singleBasketOptions(${basketIndex})`);
   singleBasketOptionTargetRef.innerHTML = "";
   const totalAmountRef = document.getElementById("totalAmount");
   totalAmountRef.innerHTML = "";
