@@ -51,15 +51,12 @@ function renderBasket() {
   for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
     if (basket[0].name.includes("Pizza")) {
       optionTargetRef.innerHTML += renderPizzaOptionTarget(basketIndex);
-      getPizzaBasketTemplates(basketIndex);
     }
     if (basket[0].name.includes("Pasta")) {
       optionTargetRef.innerHTML += renderPastaOptionTarget(basketIndex);
-      getPastaBasketTemplates(basketIndex);
     }
     if (basket[0].name.includes(!"Pizza" && !"Pasta")) {
       optionTargetRef.innerHTML += renderDesertOptionTarget(basketIndex);
-      getDesertBasketTemplates(basketIndex);
     }
   }
 }
@@ -79,24 +76,6 @@ function pushPizzaIntoBasket(pizzaIndex) {
   renderBasket();
 }
 
-function getPizzaBasketTemplates(basketIndex) {
-  const pizzaBasketNameTarget = document.getElementById(`singleBasketOptionName(${basketIndex})`);
-  const pizzaBasketName = basket[basketIndex].name;
-  pizzaBasketNameTarget.innerHTML = pizzaBasketName;
-  const pizzaBasketPriceTarget = document.getElementById(`singlePizzaPriceTarget(${basketIndex})`);
-  const pizzaBasketPrice = basket[basketIndex].price;
-  pizzaBasketPriceTarget.innerHTML = pizzaBasketPrice;
-  const pizzaBasketSubtractBtnTarget = document.getElementById(`singleOptionSubtractBtnTarget(${basketIndex})`);
-  const pizzaBasketAmountTarget = document.getElementById(`singlePizzaAmountTarget(${basketIndex})`);
-  const pizzaBasketAmount = basket[basketIndex].amount;
-  pizzaBasketAmountTarget.innerHTML = pizzaBasketAmount;
-  pizzaBasketSubtractBtnTarget.innerHTML = renderSinglePizzaSubtractBtn(basketIndex);
-  const pizzaBasketAddBtnTarget = document.getElementById(`singleOptionAddBtnTarget(${basketIndex})`);
-  pizzaBasketAddBtnTarget.innerHTML = renderSinglePizzaAddBtn(basketIndex);
-  const pizzaBasketDeleteBtnTarget = document.getElementById(`singleOptionDeleteBtnTarget(${basketIndex})`);
-  pizzaBasketDeleteBtnTarget.innerHTML = renderSinglePizzaDeleteBtn(basketIndex);
-}
-
 function pushPastaIntoBasket(pastaIndex) {
   let foundElement = false;
   for (let i = 0; i < basket.length; i++) {
@@ -112,24 +91,6 @@ function pushPastaIntoBasket(pastaIndex) {
   renderBasket();
 }
 
-function getPastaBasketTemplates(basketIndex) {
-  const pastaBasketNameTarget = document.getElementById(`singleBasketOptionName(${basketIndex})`);
-  const pastaBasketName = basket[basketIndex].name;
-  pastaBasketNameTarget.innerHTML = pastaBasketName;
-  const pastaBasketPriceTarget = document.getElementById(`singlePastaPriceTarget(${basketIndex})`);
-  const pastaBasketPrice = basket[basketIndex].price;
-  pastaBasketPriceTarget.innerHTML = pastaBasketPrice;
-  const pastaBasketSubtractBtnTarget = document.getElementById(`singleOptionSubtractBtnTarget(${basketIndex})`);
-  const pastaBasketAmountTarget = document.getElementById(`singlePastaAmountTarget(${basketIndex})`);
-  const pastaBasketAmount = basket[basketIndex].amount;
-  pastaBasketAmountTarget.innerHTML = pastaBasketAmount;
-  pastaBasketSubtractBtnTarget.innerHTML = renderSinglePastaSubtractBtn(basketIndex);
-  const pastaBasketAddBtnTarget = document.getElementById(`singleOptionAddBtnTarget(${basketIndex})`);
-  pastaBasketAddBtnTarget.innerHTML = renderSinglePastaAddBtn(basketIndex);
-  const pastaBasketDeleteBtnTarget = document.getElementById(`singleOptionDeleteBtnTarget(${basketIndex})`);
-  pastaBasketDeleteBtnTarget.innerHTML = renderSinglePastaDeleteBtn(basketIndex);
-}
-
 function pushDesertIntoBasket(desertIndex) {
   let foundElement = false;
   for (let i = 0; i < basket.length; i++) {
@@ -143,24 +104,6 @@ function pushDesertIntoBasket(desertIndex) {
     basket.push(options[0].desert[desertIndex]);
   }
   renderBasket();
-}
-
-function getDesertBasketTemplates(basketIndex) {
-  const desertBasketNameTarget = document.getElementById(`singleBasketOptionName(${basketIndex})`);
-  const desertBasketName = basket[basketIndex].name;
-  desertBasketNameTarget.innerHTML = desertBasketName;
-  const desertBasketPriceTarget = document.getElementById(`singleDesertPriceTarget(${basketIndex})`);
-  const desertBasketPrice = basket[basketIndex].price;
-  desertBasketPriceTarget.innerHTML = desertBasketPrice;
-  const desertBasketSubtractBtnTarget = document.getElementById(`singleOptionSubtractBtnTarget(${basketIndex})`);
-  const desertBasketAmountTarget = document.getElementById(`singleDesertAmountTarget(${basketIndex})`);
-  const desertBasketAmount = basket[basketIndex].amount;
-  desertBasketAmountTarget.innerHTML = desertBasketAmount;
-  desertBasketSubtractBtnTarget.innerHTML = renderSingleDesertSubtractBtn(basketIndex);
-  const desertBasketAddBtnTarget = document.getElementById(`singleOptionAddBtnTarget(${basketIndex})`);
-  desertBasketAddBtnTarget.innerHTML = renderSingleDesertAddBtn(basketIndex);
-  const desertBasketDeleteBtnTarget = document.getElementById(`singleOptionDeleteBtnTarget(${basketIndex})`);
-  desertBasketDeleteBtnTarget.innerHTML = renderSingleDesertDeleteBtn(basketIndex);
 }
 
 //#endregion
