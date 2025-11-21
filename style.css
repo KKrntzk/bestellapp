@@ -191,11 +191,13 @@ footer {
 
 /*shopping cart*/
 .content-wrapper-section {
+  position: relative;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
 }
 
-.content-wrapper {
+.content-wrapper {  
   max-width: 1920px;
   width: 100%;
   display: flex;
