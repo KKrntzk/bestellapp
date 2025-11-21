@@ -152,7 +152,7 @@ function openDialog() {
     const element = basket[basketIndex];
     element.amount = 1;
   }
-  const totalAmountRef = document.getElementById("totalAmount");
+  const totalAmountRef = document.getElementById("totalAmount");  
   if (totalAmountRef.innerHTML.includes(".")) {
     const optionTargetRef = document.getElementById("basketOptionsTarget");
     optionTargetRef.innerHTML = "";
@@ -160,7 +160,7 @@ function openDialog() {
     basket.splice(0, basket.length);
     const dialogRef = document.getElementById("dialogPopup");
     dialogRef.showModal();
-  }
+  } 
 }
 
 function closeDialog() {
