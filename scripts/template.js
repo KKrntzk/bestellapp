@@ -27,7 +27,6 @@ function renderPizzaOptionTarget(pizzaIndex) {
 }
 
 //#endregion
-
 //#region pasta
 function renderSinglePasta(
   pastaIndex,
@@ -58,7 +57,6 @@ function renderPastaOptionTarget(pastaIndex) {
 }
 
 //#endregion
-
 //#region desert
 function renderSingleDesert(
   desertIndex,
@@ -81,7 +79,7 @@ function renderDesertOptionTarget(desertIndex) {
            <header id="singleBasketOptionName(${desertIndex})" class="single-option-header"><p id="singleBasketOptionAmount(${desertIndex})" class="single-option-text">${basket[desertIndex].name}</p> </header>
              <section class="subsection-single-basket-option">
               <section id="singleOptionSubtractBtnTarget(${desertIndex})"><button onclick="substractItemFromBasket(${desertIndex}); calcTotalAmount();" id="subtractBtn(${desertIndex})" class="calc-btns">-</button></section>
-               <section id="singleDesertAmountTarget(${desertIndex})"><p id="singleBasketOptionAmount(${pastaIndex})" class="single-option-text">${basket[desertIndex].amount}</p></section>
+               <section id="singleDesertAmountTarget(${desertIndex})"><p id="singleBasketOptionAmount(${desertIndex})" class="single-option-text">${basket[desertIndex].amount}</p></section>
                <section id="singleOptionAddBtnTarget(${desertIndex})"><button onclick="addItemToBasket(${desertIndex}); calcTotalAmount();" id="addBtn(${desertIndex})" class="calc-btns">+</button></section>
                <section id="singleDesertPriceTarget(${desertIndex})"><p id="singleBasketOptionPrice(${desertIndex})" class="single-option-text">${basket[desertIndex].price}</p></section>
                <section id="singleOptionDeleteBtnTarget(${desertIndex})"><button onclick="deleteFromBasket(${desertIndex})" id="deleteBtn(${desertIndex})" class="trash-btn"><img class="trash-icon" src="./assets/img/icons/recycle-bin.png" alt=""></button></section>`;

@@ -50,19 +50,19 @@ const options = [
 
     desert: [
       {
-        name: "Tiramisu",
+        name: "Desert Tiramisu",
         description: "ohne Alkohol",
         price: 7.99,
         amount: 1,
       },
       {
-        name: "Panna Cotta",
+        name: "Desert Panna Cotta",
         description: "mit Himbeersoße",
         price: 7.99,
         amount: 1,
       },
       {
-        name: "Crème Brûlée",
+        name: "Desert Crème Brûlée",
         description: "",
         price: 7.99,
         amount: 1,

@@ -49,13 +49,13 @@ function renderBasket() {
   const optionTargetRef = document.getElementById("basketOptionsTarget");
   optionTargetRef.innerHTML = "";
   for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
-    if (basket[0].name.includes("Pizza")) {
+    if (basket[basketIndex].name.includes("Pizza")) {
       optionTargetRef.innerHTML += renderPizzaOptionTarget(basketIndex);
     }
-    if (basket[0].name.includes("Pasta")) {
+    if (basket[basketIndex].name.includes("Pasta")) {
       optionTargetRef.innerHTML += renderPastaOptionTarget(basketIndex);
     }
-    if (basket[0].name.includes(!"Pizza" && !"Pasta")) {
+    if (basket[basketIndex].name.includes("Desert")) {
       optionTargetRef.innerHTML += renderDesertOptionTarget(basketIndex);
     }
   }
@@ -63,6 +63,7 @@ function renderBasket() {
 
 function pushPizzaIntoBasket(pizzaIndex) {
   let foundElement = false;
+  let pizzaBasketVar = JSON.parse(JSON.stringify(options[0].pizza[pizzaIndex]));
   for (let i = 0; i < basket.length; i++) {
     const element = basket[i];
     if (element.name == options[0].pizza[pizzaIndex].name) {
@@ -70,14 +71,15 @@ function pushPizzaIntoBasket(pizzaIndex) {
       foundElement = true;
     }
   }
-  if (!foundElement) {
-    basket.push(options[0].pizza[pizzaIndex]);
+  if (!foundElement) {    
+    basket.push(pizzaBasketVar);
   }
   renderBasket();
 }
 
 function pushPastaIntoBasket(pastaIndex) {
   let foundElement = false;
+  let pastaBasketVar = JSON.parse(JSON.stringify(options[0].pasta[pastaIndex]));
   for (let i = 0; i < basket.length; i++) {
     const element = basket[i];
     if (element.name == options[0].pasta[pastaIndex].name) {
@@ -86,13 +88,14 @@ function pushPastaIntoBasket(pastaIndex) {
     }
   }
   if (!foundElement) {
-    basket.push(options[0].pasta[pastaIndex]);
+    basket.push(pastaBasketVar);
   }
   renderBasket();
 }
 
 function pushDesertIntoBasket(desertIndex) {
   let foundElement = false;
+  let desertBasketVar = JSON.parse(JSON.stringify(options[0].desert[desertIndex]));
   for (let i = 0; i < basket.length; i++) {
     const element = basket[i];
     if (element.name == options[0].desert[desertIndex].name) {
@@ -101,7 +104,7 @@ function pushDesertIntoBasket(desertIndex) {
     }
   }
   if (!foundElement) {
-    basket.push(options[0].desert[desertIndex]);
+    basket.push(desertBasketVar);
   }
   renderBasket();
 }
@@ -116,6 +119,7 @@ function deleteFromBasket(basketIndex) {
   const totalAmountRef = document.getElementById("totalAmount");
   totalAmountRef.innerHTML = "";
   calcTotalAmount();
+  renderBasket();
 }
 
 function substractItemFromBasket(basketIndex) {
@@ -140,9 +144,6 @@ function calcTotalAmount() {
   const totalCalcAmount = basket.reduce((sum, item) => {return sum + item.price * item.amount + 5;}, 0).toFixed(2);
   totalAmountRef.innerHTML = totalCalcAmount + "€";
 }
-
-//#endregion
-//#region itemAmount
 
 //#endregion
 //#region open dialog on order
